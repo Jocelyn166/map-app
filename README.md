@@ -1,20 +1,21 @@
 # Map Location Picker App
 
-A simple full-stack map application that allows users to select locations on a 2D map, save them to a database, and view previously saved locations.
+A full-stack web application that allows users to select locations on an interactive map, save them to a database, and view previously saved locations.
 
-This project was built as part of a technical assessment using Vue.js, Vuex, Node.js, Express, and SQLite.
+This project was developed as part of a technical assessment using **Vue.js**, **Vuex**, **Node.js**, **Express**, and **SQLite**.
 
 ---
 
 ## Features
 
 - Interactive Google Map
-- Select a location by clicking on the map
-- Reverse geocode coordinates into a readable address
-- Save selected locations to a SQLite database
-- View all previously saved locations in a paginated table
-- Responsive layout (desktop and mobile)
-- Accessible UI with keyboard and screen-reader support
+- Select locations by clicking directly on the map
+- Reverse geocoding to convert coordinates into human-readable addresses
+- Persist selected locations in a SQLite database
+- View saved locations in a paginated table
+- Fully responsive layout (desktop & mobile)
+- Accessible UI with keyboard navigation and screen-reader support
+- Optimistic UI updates for a smooth user experience
 
 ---
 
@@ -37,73 +38,103 @@ This project was built as part of a technical assessment using Vue.js, Vuex, Nod
 ## Project Structure
 
 map-app/
-├─ client/ # Vue frontend
-├─ server/ # Express + SQLite backend
+├─ client/        # Vue 3 frontend
+├─ server/        # Express + SQLite backend
 └─ README.md
 
 ---
 
 ## Prerequisites
 
-- Node.js (v18 or later recommended)
-- npm
-- A Google Maps API key
-- A Google Maps MAP ID
+### Node.js (v18 or later recommended)
+
+### npm
+
+### Google Maps API Key
+
+### Google Maps Map ID
 
 ---
 
 ## Environment Variables
 
-### Client (`client/.env.example`)
+### Client
+
+Create a .env file in the client directory using the example below:
 
 ```env
 VITE_GOOGLE_MAPS_API_KEY=your_google_maps_api_key
 VITE_GOOGLE_MAP_ID=your_map_id
 VITE_API_BASE_URL=http://localhost:3000
+```
+
+Copy client/.env.example to client/.env and replace the placeholder values.
+Actual secret values will be shared privately via email.
 
 
-Server (server/.env.example)
+### Server
+
+Create a .env file in the server directory:
+
+```env
 PORT=3000
 DB_PATH=./locations.db
 NODE_ENV=development
+```
 
-Copy .env.example to .env in both folders and fill in the values.
-The actual values will be sent via email.
 
-Installation
-1. Clone the repository
-git clone https://github.com/your-username/map-app.git
+---
+
+## Installation
+
+### Clone the Repository
+```env
+git clone https://github.com/Jocelyn166/map-app.git
 cd map-app
+```
 
-2. Install server dependencies
+
+### Install Server Dependencies
+```env
 cd server
 npm install
+```
 
-3. Install client dependencies
+### Install Client Dependencies
+```env
 cd ../client
 npm install
+```
 
-Running the App
-Start the backend
+---
+
+## Running the Application
+
+### Start the Backend Server
+```env
 cd server
 npm start
+```
 
-
-The server will run at:
-
+Backend API will be available at:
 http://localhost:3000
 
-Start the frontend
+
+### Start the Frontend
+```env
 cd client
 npm run dev
+```
 
-
-The app will be available at:
-
+The frontend will be available at:
 http://localhost:5173
 
-Author
 
-Juan(Jocelyn)
+---
 
-```
+## Notes
+
+The SQLite database file is created automatically on first run.
+
+Environment files (.env) and database files are excluded from version control.
+
